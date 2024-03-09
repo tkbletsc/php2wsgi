@@ -1,0 +1,13 @@
+#Options +Indexes
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # If the requested resource is not a file or directory
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Rewrite all requests to /index.php
+    RewriteRule ^ wrap.php [L]
+</IfModule>
+
