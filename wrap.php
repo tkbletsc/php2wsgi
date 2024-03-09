@@ -4,26 +4,6 @@ $pythonScript = 'wsgi-host.py';
 
 $DEBUG = false;  // Set this to true to enable debugging, or false to disable
 
-function dprint(...$args) {
-    global $DEBUG;
-    
-    if ($DEBUG) {
-        echo implode(' ', $args) . PHP_EOL;
-    }
-}
-
-function setHttpStatus($statusString) {
-    // Split the status string into code and message
-    list($statusCode, $statusMessage) = explode(' ', $statusString, 2);
-
-    // Set the HTTP response status
-    header("HTTP/1.1 $statusCode $statusMessage");
-
-    // Optionally, you can output a message
-    echo "Response Status: $statusString";
-}
-
-
 // Define the wsgi environment variables based on PHP inputs
 $environ = [
     'REQUEST_METHOD' => $_SERVER['REQUEST_METHOD'],
