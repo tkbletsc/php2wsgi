@@ -12,7 +12,7 @@ Once this works, remove demo.py and bottle.py, then modify wsgi-host.py where th
 If all goes well, visiting that web server should show you your app.
 
 ## Troubleshooting
-If all does not go well, you can turn on debug output in both wrap.php (which gets the requests, translates it into a WSGI execution, and gathers the results) and in wsgi-host.py (which actually runs the python part). Read comments to see how the wrapper works and debug as needed. 
+If all does not go well, you can turn on debug output in both wrap.php (which gets the request, translates it into a call to wsgi-host.py, and gathers the results) and in wsgi-host.py (which actually runs your python application and packages results for wrap.php). Read comments to see how the wrapper works and debug as needed. 
 
 It's a bit ugly, but only because the idea of this creating a thing such as this is a bad one. 
 
